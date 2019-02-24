@@ -1,2 +1,2 @@
-# spring-boot-projects
-This is the project which will contain little projects of spring 
+# create-docker
+This is sample spring boot project to demonstrate how to dockerize spring boot application with dockerfile 
