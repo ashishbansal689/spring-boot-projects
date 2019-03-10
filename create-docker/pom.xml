@@ -38,13 +38,15 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
 
-            <!-- <plugin>
+             <plugin>
                  <groupId>com.spotify</groupId>
                  <artifactId>dockerfile-maven-plugin</artifactId>
                  <version>1.4.0</version>
                  <configuration>
-                     &lt;!&ndash; replace `ashish5632` with your docker id&ndash;&gt;
-                     <repository>ashish5632/docker-demo</repository>
+                     <!-- replace `username` with your docker id-->
+                     <contextDirectory>${project.basedir}</contextDirectory>
+                     <repository>{username}/${project.artifactId}</repository>
+                     <useMavenSettingsForAuth>true</useMavenSettingsForAuth>
                      <tag>${project.version}</tag>
                      <buildArgs>
                          <JAR_FILE>target/${project.build.finalName}.jar</JAR_FILE>
@@ -56,11 +58,12 @@
                          <phase>install</phase>
                          <goals>
                              <goal>build</goal>
+                             <goal>tag</goal>
                              <goal>push</goal>
                          </goals>
                      </execution>
                  </executions>
-             </plugin>-->
+             </plugin>
         </plugins>
     </build>
 
